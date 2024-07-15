@@ -2,4 +2,4 @@ services:
   app:
     build: .
     ports:
-      - "8008:80"
+      - "10002:80"

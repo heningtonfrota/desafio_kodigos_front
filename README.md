@@ -34,4 +34,4 @@ docker compose up -d
 
 ### 4. Acessar a aplicação
 
-Após subir os containers, a aplicação estará disponível em http://localhost:10000.
+Após subir os containers, a aplicação estará disponível em http://localhost:10002.
