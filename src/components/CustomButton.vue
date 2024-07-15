@@ -37,7 +37,7 @@ const props = defineProps({
 }
 
 .custom-button.primary {
-  background-color: #007bff;
+  background-color: #189FE3;
   color: white;
 }
 
