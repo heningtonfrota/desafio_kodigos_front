@@ -1,6 +1,36 @@
 <script setup>
-import IconAccountCicle from '../icons/IconAccountCicle.vue';
-import IconLock from '../icons/IconLock.vue';
+import IconAccountCicle from '@/components/icons/IconAccountCicle.vue';
+import IconLock from '@/components/icons/IconLock.vue';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import axios from '@/plugins/axios';
+
+const router = useRouter();
+const form = ref({
+  email: '',
+  password: '',
+  device_name: 'front-end'
+});
+
+function submitForm() {
+  console.log(form.value);
+
+  if (!form.value.email || !form.value.password) {
+    alert('Existe campos não preenchidos!');
+    return;
+  }
+
+  axios.post('/tokens/create', form.value)
+    .then(response => {
+      const { token } = response.data;
+      localStorage.setItem('token', token);
+
+      router.push("/cotacao/analise-de-valores");
+    })
+    .catch(error => {
+      alert('Erro ao carregar dados da API:', error);
+    });
+}
 </script>
 
 <template>
@@ -10,13 +40,13 @@ import IconLock from '../icons/IconLock.vue';
       <div>
         <div class="input-with-icon">
           <IconAccountCicle class="icon" />
-          <input placeholder="Email" type="email" id="email" v-model="email" required>
+          <input placeholder="Email" type="email" id="email" v-model="form.email">
         </div>
       </div>
       <div>
         <div class="input-with-icon">
           <IconLock class="icon" />
-          <input placeholder="Senha" type="password" id="password" v-model="password" required>
+          <input placeholder="Senha" type="password" id="password" v-model="form.password">
         </div>
       </div>
       <button type="submit">Acessar</button>
