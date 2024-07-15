@@ -1,29 +1,37 @@
-# front
+# Desafio Kodigos - Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+Este repositório contém a aplicação frontend desenvolvida em Vue 3 para o desafio da Kodigos.
 
-## Recommended IDE Setup
+## Pré-requisitos
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Antes de começar, certifique-se de ter o Docker e Docker Compose instalados na sua máquina.
 
-## Customize configuration
+## Passo a Passo
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### 1. Clonar o repositório
 
-## Project Setup
+Clone este repositório na sua máquina local usando o comando:
 
-```sh
-npm install
+```bash
+git clone https://github.com/heningtonfrota/desafio_kodigos_front.git
 ```
 
-### Compile and Hot-Reload for Development
+### 2. Navegar até a pasta do projeto
 
-```sh
-npm run dev
+Entre na pasta do projeto recém clonada:
+
+```bash
+cd desafio_kodigos_front
 ```
 
-### Compile and Minify for Production
+### 3. Rodar o Docker Compose
 
-```sh
-npm run build
+Suba os containers da aplicação usando o Docker Compose:
+
+```bash
+docker compose up -d
 ```
+
+### 4. Acessar a aplicação
+
+Após subir os containers, a aplicação estará disponível em http://localhost:10000.
